@@ -1,0 +1,274 @@
+/*
+   IDENTIDADE VISUAL — FÍSICA DOS RAIOS X
+   Tema: laboratório, espectro eletromagnético e instrumentação científica.
+*/
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+:root {
+    color-scheme: dark;
+    --bg: #07130f;
+    --bg-soft: #0a1b14;
+    --panel: rgba(13, 34, 25, .94);
+    --panel-2: #10271d;
+    --panel-3: #153326;
+    --green: #72e3a0;
+    --green-bright: #a1ffc1;
+    --green-deep: #35ad70;
+    --text: #edf7f0;
+    --muted: #b1c7b9;
+    --subtle: #829b8b;
+    --line: rgba(133, 205, 158, .19);
+    --line-strong: rgba(133, 205, 158, .34);
+    --shadow: 0 24px 70px rgba(0, 0, 0, .34);
+    --radius: 18px;
+    --content: 1040px;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 24px; }
+body {
+    position: relative;
+    isolation: isolate;
+    min-height: 100vh;
+    margin: 0;
+    padding: 30px 24px 72px;
+    overflow-x: hidden;
+    color: var(--text);
+    background:
+        radial-gradient(ellipse at 50% -18%, rgba(65, 170, 104, .19), transparent 48%),
+        radial-gradient(circle at 92% 54%, rgba(40, 117, 77, .10), transparent 28%),
+        linear-gradient(145deg, #07130f 0%, #091a13 48%, #06110d 100%);
+    font-family: 'Manrope', Arial, sans-serif;
+    font-size: 15.5px;
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+/* Grade técnica discreta ao fundo, inspirada em papel milimetrado e diagramas. */
+body::before {
+    position: fixed;
+    z-index: -1;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+        linear-gradient(rgba(130, 190, 148, .025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(130, 190, 148, .025) 1px, transparent 1px);
+    background-size: 44px 44px;
+    content: '';
+    mask-image: linear-gradient(to bottom, black, transparent 88%);
+}
+
+/* Navegação compartilhada por todas as páginas. */
+body > ul,
+.site-nav,
+.site-nav ul {
+    width: min(var(--content), 100%);
+    margin: 0 auto 34px;
+}
+body > ul,
+.site-nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 9px;
+    list-style: none;
+    background: rgba(9, 27, 19, .88);
+    border: 1px solid var(--line-strong);
+    border-radius: 13px;
+    box-shadow: 0 12px 34px rgba(0, 0, 0, .22);
+    backdrop-filter: blur(16px);
+}
+body > ul li,
+.site-nav li { margin: 0; padding: 0; }
+body > ul a,
+body > ul strong,
+.site-nav a,
+.site-nav strong {
+    display: block;
+    padding: 10px 15px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    color: var(--muted);
+    font-size: .84rem;
+    font-weight: 700;
+    letter-spacing: .01em;
+    text-decoration: none;
+    transition: color .2s ease, background .2s ease, border-color .2s ease;
+}
+body > ul a:hover,
+.site-nav a:hover {
+    color: var(--green-bright);
+    background: rgba(114, 227, 160, .08);
+    border-color: var(--line);
+}
+body > ul strong,
+.site-nav strong {
+    color: #06150d;
+    background: var(--green);
+    border-color: var(--green);
+}
+hr { display: none; }
+
+/* Área principal e hierarquia editorial. */
+section {
+    position: relative;
+    width: min(var(--content), 100%);
+    margin: 0 auto;
+    padding: clamp(30px, 6vw, 70px);
+    overflow: hidden;
+    background: linear-gradient(150deg, rgba(15, 39, 28, .97), rgba(8, 25, 17, .98));
+    border: 1px solid var(--line-strong);
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+}
+section::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--green), rgba(114, 227, 160, .15), transparent);
+    content: '';
+}
+
+h1, h2, h3 {
+    color: var(--text);
+    font-family: 'Manrope', Arial, sans-serif;
+    line-height: 1.22;
+    letter-spacing: -.035em;
+}
+h1 {
+    max-width: 850px;
+    margin: 0 0 30px;
+    font-size: clamp(2.15rem, 5.4vw, 3.8rem);
+    font-weight: 800;
+}
+h1::after {
+    display: block;
+    width: 66px;
+    height: 3px;
+    margin-top: 22px;
+    border-radius: 4px;
+    background: var(--green);
+    box-shadow: 0 0 18px rgba(114, 227, 160, .32);
+    content: '';
+}
+h2 {
+    margin: 48px 0 16px;
+    padding: 0 0 11px;
+    border-bottom: 1px solid var(--line);
+    color: var(--green-bright);
+    font-size: clamp(1.28rem, 3vw, 1.72rem);
+    font-weight: 700;
+}
+h3 { margin: 28px 0 12px; color: var(--green); font-size: 1.12rem; }
+p { margin: 0 0 20px; color: #c7d8cc; }
+strong { color: #f2fff5; font-weight: 700; }
+a { color: var(--green); text-underline-offset: 4px; }
+a:hover { color: var(--green-bright); }
+
+blockquote {
+    margin: 32px 0;
+    padding: 23px 27px;
+    color: #e4f6e9;
+    background: linear-gradient(110deg, rgba(87, 174, 117, .12), rgba(87, 174, 117, .035));
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--green);
+    border-radius: 0 12px 12px 0;
+    font-size: 1.05rem;
+}
+blockquote small { display: inline-block; margin-top: 10px; color: var(--muted); font-size: .84rem; }
+
+ul:not(body > ul):not(.site-nav ul) { padding-left: 24px; color: #c7d8cc; }
+li { margin: 0 0 11px; padding-left: 3px; }
+li::marker { color: var(--green); }
+
+/* Dados e propriedades físicas. */
+table {
+    width: 100%;
+    margin: 26px 0 34px;
+    overflow: hidden;
+    border: 1px solid var(--line-strong);
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 12px;
+    background: rgba(4, 17, 11, .42);
+}
+th, td {
+    padding: 15px 18px;
+    border-bottom: 1px solid var(--line);
+    text-align: left;
+    vertical-align: top;
+}
+th {
+    color: #07170e;
+    background: linear-gradient(105deg, #72e3a0, #a1ffc1);
+    font-size: .84rem;
+    font-weight: 800;
+    letter-spacing: .025em;
+}
+td { color: #c9dbcf; }
+tbody tr:last-child td { border-bottom: 0; }
+tbody tr:hover td { background: rgba(114, 227, 160, .045); }
+
+/* Fotografias históricas, cientista e registros experimentais. */
+figure {
+    width: min(100%, 760px);
+    margin: 34px auto;
+    padding: 12px;
+    overflow: hidden;
+    background: linear-gradient(145deg, rgba(18, 48, 33, .9), rgba(7, 22, 14, .95));
+    border: 1px solid var(--line-strong);
+    border-radius: 14px;
+    box-shadow: 0 15px 38px rgba(0, 0, 0, .22);
+}
+figure img {
+    display: block;
+    width: 100%;
+    max-height: 480px;
+    object-fit: contain;
+    border-radius: 8px;
+    background: #06110b;
+}
+figcaption {
+    padding: 13px 9px 5px;
+    color: var(--muted);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: .76rem;
+    line-height: 1.65;
+    text-align: center;
+}
+
+/* Pequenos detalhes tipográficos para grandezas, códigos e notações. */
+code, samp, kbd {
+    padding: 2px 6px;
+    color: var(--green-bright);
+    background: rgba(114, 227, 160, .09);
+    border: 1px solid var(--line);
+    border-radius: 5px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: .9em;
+}
+::selection { color: #06150d; background: var(--green); }
+:focus-visible { outline: 2px solid var(--green-bright); outline-offset: 4px; }
+
+@media (max-width: 680px) {
+    body { padding: 16px 11px 38px; font-size: 14.5px; }
+    body > ul, .site-nav ul { justify-content: stretch; gap: 4px; padding: 7px; margin-bottom: 20px; }
+    body > ul li, .site-nav li { flex: 1 1 145px; }
+    body > ul a, body > ul strong, .site-nav a, .site-nav strong { padding: 9px 7px; text-align: center; font-size: .78rem; }
+    section { padding: 27px 20px; border-radius: 14px; }
+    h1 { font-size: clamp(2rem, 10vw, 2.8rem); }
+    h2 { margin-top: 36px; }
+    th, td { padding: 11px 9px; font-size: .82rem; }
+    figure { padding: 8px; margin: 25px auto; }
+    figcaption { font-size: .7rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { transition-duration: .01ms !important; }
+}
